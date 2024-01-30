@@ -1,4 +1,3 @@
-import 'package:basics/styled_text.dart';
 import 'package:flutter/material.dart';
 
 class GradientContainer extends StatelessWidget {
@@ -6,18 +5,34 @@ class GradientContainer extends StatelessWidget {
 
   const GradientContainer({super.key, required this.colors});
 
+  const GradientContainer.purple({super.key})
+      : colors = const [Colors.deepPurple, Colors.indigo];
+
+  void rollDice() {}
+
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-            colors: colors,
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight),
+          colors: colors,
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
       ),
-      child: const Center(
-        child: StyledText('Hello World'),
-      ),
+      child: Center(
+          child: Column(
+        children: [
+          Image.asset(
+            'assets/images/dice-2.png',
+            width: 200,
+          ),
+          TextButton(
+            onPressed: rollDice,
+            child: const Text('Roll Dice'),
+          )
+        ],
+      )),
     );
   }
 }
