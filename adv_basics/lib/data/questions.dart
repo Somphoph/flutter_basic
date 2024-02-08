@@ -6,5 +6,17 @@ const questions = [
     'Components',
     'Blocks',
     'Functions',
-  ])
+  ]),
+  QuizQuestion('What''s the color of pikachu?', [
+    'Red',
+    'Green',
+    'Yellow',
+    'Blue',
+  ]),
+  QuizQuestion('What''s name of pikachu after them evolution ?', [
+    'Pikachu2',
+    'Elechu',
+    'Thunder',
+    'Richu',
+  ]),
 ];
